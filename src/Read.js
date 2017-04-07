@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import Input from './Read/Input';
+import Api from './Api';
 import './App.css';
 
 
 class Read extends Component {
   constructor() {
     super()
-
-    this.state = {
-      tweets: []
-    }
 
     this.onSubmit = this.onSubmit.bind(this)
   }
@@ -20,12 +17,12 @@ class Read extends Component {
 
   onSubmit(tweetURL) {
     this.setState({
-      timeline: this.retrieveTweets(this.extractID(tweetURL))
+      tweet: this.retrieveTweet(this.extractID(tweetURL))
     })
   }
 
-  retrieveTweets(tweetURL){
-    debugger
+  retrieveTweet(tweetURL){
+    return Api.retrieveData('tweet/' + tweetURL)
   }
 
   render() {
