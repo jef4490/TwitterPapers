@@ -27,7 +27,7 @@ class Read extends Component {
 
   retrieveData(resource){
     axios.get(`http://localhost:4000/${resource}.json`)
-      .then((data) => {
+      .then(({data}) => {
         this.setState({
           tweet: data
         })
