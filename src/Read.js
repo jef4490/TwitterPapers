@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Input from './Read/Input';
-import Api from './Api';
+import axios from 'axios'
 import './App.css';
 
 
@@ -22,7 +22,16 @@ class Read extends Component {
   }
 
   retrieveTweet(tweetURL){
-    return Api.retrieveData('tweet/' + tweetURL)
+  this.retrieveData('tweet/' + tweetURL)
+  }
+
+  retrieveData(resource){
+    axios.get(`http://localhost:4000/${resource}.json`)
+      .then((data) => {
+        this.setState({
+          tweet: data
+        })
+      })
   }
 
   render() {
