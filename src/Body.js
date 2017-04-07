@@ -7,7 +7,7 @@ class Body extends Component {
 
   }
 
-  renderModeCompondet() {
+  renderModeComponent() {
     if (this.props.mode === 'init') {
       return < Init />
     } else if (this.props.mode === 'write') {
@@ -20,7 +20,7 @@ class Body extends Component {
   render() {
     return (
       <div className="row header">
-
+        {this.renderModeComponent()}
       </div>
     );
   }
