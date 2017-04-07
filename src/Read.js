@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Input from './Read/Input';
-// import Output from './Read/Output';
+import Output from './Read/Output';
 import axios from 'axios'
 import './App.css';
 
