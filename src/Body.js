@@ -11,17 +11,17 @@ class Body extends Component {
 
   renderModeComponent() {
     if (this.props.mode === 'init') {
-      return < Init changeMode={this.props.changeMode}/>
+      return <Init changeMode={this.props.changeMode}/>
     } else if (this.props.mode === 'write') {
-      return < Write />
+      return <Write/>
     } else {
-      return < Read />
+      return <Read/>
     }
   }
 
   render() {
     return (
-      <div className="row header">
+      <div className="row body">
         {this.renderModeComponent()}
       </div>
     );

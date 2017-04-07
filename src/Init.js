@@ -12,7 +12,7 @@ class Init extends Component {
     let mode = event.target.closest("div").dataset.id
     this.props.changeMode(mode)
   }
-  
+
   render() {
     return (
       <div className='init'>
