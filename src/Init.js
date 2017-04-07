@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 class Read extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
 
   }
 
