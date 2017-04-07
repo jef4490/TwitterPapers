@@ -9,6 +9,10 @@ class Read extends Component {
   constructor() {
     super()
 
+    this.state = {
+      tweetTimeline: []
+    }
+
     this.onSubmit = this.onSubmit.bind(this)
   }
 
@@ -87,6 +91,7 @@ class Read extends Component {
     return(
       <div className="read">
         <Input onSubmit={this.onSubmit}/>
+        <Output tweets={this.state.tweetTimeline}/>
       </div>
     )
   }
