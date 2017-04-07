@@ -1,4 +1,4 @@
-.App {
+/*.App {
   text-align: center;
 }
 
@@ -16,9 +16,22 @@
 
 .App-intro {
   font-size: large;
-}
+}*/
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+
+.container-fluid {
+  background-color: rgb(245, 248, 250);
+}
+
+.header {
+  background-color: rgb(29,161,242);
+  color: white;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  border-radius: 0px 0px 7px 7px;
 }

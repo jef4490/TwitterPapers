@@ -10,13 +10,22 @@ class App extends Component {
     this.state = {
       mode: 'init'
     }
+    this.changeMode = this.changeMode.bind(this)
+  }
+
+  changeMode(modeName) {
+    console.log(modeName)
+    this.setState({
+      mode: modeName
+    })
+
   }
 
   render() {
     return (
       <div className="App">
-            < Header />
-          < Body mode={this.state.mode} />
+            < Header changeMode={this.changeMode}/>
+          < Body mode={this.state.mode} changeMode={this.changeMode}/>
       </div>
     );
   }
