@@ -30,6 +30,7 @@ class Input extends Component {
           <form className="tweet-url-form" id="tweet-url-form" onSubmit={this.handleClick}>
             <textarea placeholder="Your essay here" className="write-essay-text" id="write-essay-text" onChange={this.handleText}>
             </textarea>
+            <br />
             <button type="Submit" id="tweet-submit">Write It</button>
           </form>
         </div>

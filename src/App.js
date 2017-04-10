@@ -14,7 +14,6 @@ class App extends Component {
   }
 
   changeMode(modeName) {
-    console.log(modeName)
     this.setState({
       mode: modeName
     })
@@ -23,8 +22,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-            < Header changeMode={this.changeMode}/>
+      <div className="App container-fluid-page-wrapper">
+          < Header changeMode={this.changeMode}/>
           < Body mode={this.state.mode} changeMode={this.changeMode}/>
       </div>
     );

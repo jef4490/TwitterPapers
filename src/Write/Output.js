@@ -78,6 +78,7 @@ class Output extends Component {
 
     return(
       <div className="essay-tweets-display">
+        {this.state.essayTweets.length > 0 ? <h3 className="tweetSubtitle">Tweets: </h3> : null}
         {tweetList}
       </div>
     )
