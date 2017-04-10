@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as utils from "./utils"
 import Input from './Write/Input'
 import Output from './Write/Output'
 import './App.css';
@@ -22,7 +23,7 @@ class Write extends Component {
     return(
       <div className="write">
         <Input onSubmit={this.onSubmit}/>
-        <Output essay={this.state.essayText}/>
+        {this.state.essayText.length > 0 ? <Output essay={utils.parseEssay(this.state.essayText)}/> : null}
       </div>
     )
   }

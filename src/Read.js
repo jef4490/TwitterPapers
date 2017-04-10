@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as utils from "./utils"
 import Input from './Read/Input';
 import Output from './Read/Output';
 import axios from 'axios'
@@ -69,10 +70,6 @@ class Read extends Component {
       })
   }
 
- componentWillUpdate(){
-  //  DO TWEET STUFF
- }
-
    tweetNumber() {
     let regexNumberStart = /^\d+\.*/
     let regexNumberEnd = /[-=|]*\d+$/
@@ -108,7 +105,7 @@ class Read extends Component {
     return(
       <div className="read">
         <Input onSubmit={this.onSubmit}/>
-        <Output tweets={this.state.filteredTimeline} regex={this.state.regex}/>
+        <Output tweets={utils.filterTimeline(this.state.filteredTimeline, this.state.regex)}/>
       </div>
     )
   }
