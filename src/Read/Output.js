@@ -38,7 +38,7 @@ class Output extends Component {
   render() {
     return(
       <div className="Output">
-        <Paragraph tweets={this.state.filteredTimeline.reverse()} />
+        <Paragraph tweets={this.state.filteredTimeline} />
       </div>
     )
   }

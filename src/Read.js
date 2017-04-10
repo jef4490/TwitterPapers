@@ -108,7 +108,7 @@ class Read extends Component {
     return(
       <div className="read">
         <Input onSubmit={this.onSubmit}/>
-        <Output tweets={this.state.filteredTimeline.reverse()} regex={this.state.regex}/>
+        <Output tweets={this.state.filteredTimeline} regex={this.state.regex}/>
       </div>
     )
   }

@@ -8,13 +8,13 @@ class Api extends Component {
     super()
 
   }
-
-  static retrieveData(resource){
-    axios.get(`http://localhost:4000/${resource}.json`)
-      .then((data) => {
-
-      })
-  }
+  // 
+  // static retrieveData(resource){
+  //   axios.get(`http://localhost:4000/${resource}.json`)
+  //     .then((data) => {
+  //
+  //     })
+  // }
 
   render() {
     return(
