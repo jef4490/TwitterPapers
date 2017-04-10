@@ -10,7 +10,7 @@ class Read extends Component {
     super()
 
     this.state = {
-      tweetTimeline: []
+      filteredTimeline: []
     }
 
     this.onSubmit = this.onSubmit.bind(this)
@@ -42,13 +42,30 @@ class Read extends Component {
   sanitizeTweet(){
     this.tweetNumber()
   }
-// https://twitter.com/HeerJeet/status/529767402775781376
+
+// https://twitter.com/matthewstoller/status/846351172680241154
+
+
+  filterTweets(data) {
+      var arr = []
+      var replyId = this.state.tweet.id
+      data.forEach((item) => {
+        if (item.id_str == replyId) {
+          replyId = item.in_reply_to_status_id_str
+          arr.unshift(item)
+            if (replyId == null) {
+              replyId = 'done'
+            }
+        } else {
+        }
+      })
+      return this.setState({filteredTimeline: arr})
+    }
+
   retrieveTimeline(){
       axios.get(`http://localhost:4000/tweet/${this.state.tweet.id_str}/${this.state.tweet.user.id}/${parseInt(this.state.tweetCount)*2}.json`)
       .then(({data}) => {
-        this.setState({
-          tweetTimeline: data
-        })
+        this.filterTweets(data)
       })
   }
 
@@ -91,7 +108,7 @@ class Read extends Component {
     return(
       <div className="read">
         <Input onSubmit={this.onSubmit}/>
-        <Output tweets={this.state.tweetTimeline}/>
+        <Output tweets={this.state.filteredTimeline.reverse()} regex={this.state.regex}/>
       </div>
     )
   }
