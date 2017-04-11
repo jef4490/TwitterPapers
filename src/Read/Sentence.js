@@ -8,7 +8,7 @@ const Sentence = (props) => {
   let regexLink = /(https|ftp|http):\/\/.+[^.!?)(]/
   let hyperlinkFormat = text.map((item) => {
         if (item.search(regexLink) !== -1) {
-          let start
+          let start = ""
           let end = " "
           if (item.match(/[.!?)(]$/) != null) {
              end = item.match(/[.!?)(]$/) + " "
@@ -17,7 +17,7 @@ const Sentence = (props) => {
           if (item.match(/^[?)(]/) != null) {
             start = item.match(/^[?)(]/)
           }
-          let hyperlink = <Hyperlink link={item.match(regexLink)[0]} text={item.match(regexLink)[0]} start={start} end={end}/>
+          let hyperlink = <Hyperlink link={item.match(regexLink)[0]} text={item.match(regexLink)[0]} start={start[0]} end={end}/>
           return hyperlink
         } else {
           return item + " "

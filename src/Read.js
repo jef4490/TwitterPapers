@@ -28,7 +28,7 @@ class Read extends Component {
   }
 
   retrieveTweet(tweetURL){
-    axios.get(`http://localhost:4000/tweet/${tweetURL}.json`)
+    axios.get(`https://twitterpapersserver.herokuapp.com/tweet/${tweetURL}.json`)
       .then(({data}) => {
         this.setState({
           tweet: data
@@ -64,7 +64,7 @@ class Read extends Component {
     }
 
   retrieveTimeline(){
-      axios.get(`http://localhost:4000/tweet/${this.state.tweet.id_str}/${this.state.tweet.user.id}/${parseInt(this.state.tweetCount)*2}.json`)
+      axios.get(`https://twitterpapersserver.herokuapp.com/tweet/${this.state.tweet.id_str}/${this.state.tweet.user.id}/${parseInt(this.state.tweetCount)*2}.json`)
       .then(({data}) => {
         this.filterTweets(data)
       })
