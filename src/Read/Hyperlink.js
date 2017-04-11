@@ -4,7 +4,7 @@ import '../App.css';
 const Hyperlink = (props) => {
   // debugger
   return (
-    <a href={`${props.link}`}>{props.start}{props.text}{props.end}</a>
+    <a href={`${props.link}`}>{props.text}</a>
   )
 }
 

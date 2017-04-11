@@ -6,23 +6,30 @@ const Sentence = (props) => {
 
   let text = props.text.split(' ')
   let regexLink = /(https|ftp|http):\/\/.+[^.!?)(]/
-  let hyperlinkFormat = text.map((item) => {
-        if (item.search(regexLink) !== -1) {
-          let start = ""
-          let end = " "
-          if (item.match(/[.!?)(]$/) != null) {
-             end = item.match(/[.!?)(]$/) + " "
-          }
+  let textCache = ''
+  let hyperlinkFormat = []
 
-          if (item.match(/^[?)(]/) != null) {
-            start = item.match(/^[?)(]/)
-          }
-          let hyperlink = <Hyperlink link={item.match(regexLink)[0]} text={item.match(regexLink)[0]} start={start[0]} end={end}/>
-          return hyperlink
-        } else {
-          return item + " "
-        }
-      })
+  text.forEach((item, index) => {
+    if (item.search(regexLink) !== -1) {
+      let start = ""
+      let end = ""
+      if (item.match(/[.!?)(]$/) != null) {
+         end = item.match(/[.!?)(]$/)[0] + " "
+      }
+      if (item.match(/^[?)(]/) != null) {
+        start = item.match(/^[?)(]/)[0]
+      }
+      let hyperlink = <Hyperlink link={item.match(regexLink)[0]} text={item.match(regexLink)[0]}/>
+      textCache += start
+      hyperlinkFormat.push(textCache)
+      textCache = end + " "
+      return hyperlinkFormat.push(hyperlink)
+    } else {
+      return textCache += (item + " ")
+    }
+  })
+    hyperlinkFormat.push(textCache)
+
 
   return(
     <span data-type="s" data-id={props.index}>
