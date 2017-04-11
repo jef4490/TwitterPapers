@@ -44,9 +44,6 @@ class Read extends Component {
     this.tweetNumber()
   }
 
-// https://twitter.com/matthewstoller/status/846351172680241154
-
-
   filterTweets(data) {
       var arr = []
       var replyId = this.state.tweet.id
