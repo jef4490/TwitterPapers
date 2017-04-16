@@ -12,7 +12,7 @@ function Output(props) {
       <div className="Output">
         <div className='read-paragraph'>
           {props.tweets.length > 0 ? <h3 className="essaySubtitle">Essay:</h3> : null}
-          {props.tweets.length > 0 ? props.tweets.map((tweet, index) => <Sentence index={index} text={tweet.text}/>) : null}
+          {props.tweets.length > 0 ? props.tweets.map((tweet, index) => <Sentence key={index} index={index} text={tweet.text}/>) : null}
         </div>
       </div>
     )
