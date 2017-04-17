@@ -1,7 +1,7 @@
 {
   "name": "twitter-papers",
   "version": "0.1.0",
-  "homepage": "https://jef4490.github.io/twitterpapers",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "axios": "^0.16.0",
