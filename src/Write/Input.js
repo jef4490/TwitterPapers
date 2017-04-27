@@ -33,7 +33,7 @@ class Input extends Component {
             <br />
             <button type="Submit" id="tweet-submit">Write It</button>
           </form>
-          <p className="suggested-url">Not sure where to start? Try: http://tvipsum.com/?paragraphs=2</p>
+          <p className="suggested-url">Not sure where to start? Try: <a target="_blank" href="http://tvipsum.com/?paragraphs=2">http://tvipsum.com/?paragraphs=2</a></p>
         </div>
     )
   }
