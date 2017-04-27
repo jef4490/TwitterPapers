@@ -163,6 +163,11 @@ h3.tweetSubtitle{
   font-weight: bold;
 }
 
+.suggested-url {
+  font-weight: lighter;
+  font-size: 10px;
+  font-style: italic;
+}
 
 
 /*.on { display: none; user-select: none; cursor: hand;}*/

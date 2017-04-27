@@ -31,6 +31,8 @@ class Input extends Component {
           <input type="text" placeholder="Tweet URL" value={this.state.tweetURL} onChange={this.handleText}className="Tweet-URL-text" id="tweet-url-text"/>
           <button type="Submit" id="tweet-submit">Read It</button>
         </form>
+        <br/>
+        <p className="suggested-url">Not sure where to start? Try: https://twitter.com/HeerJeet/status/846399361693102084</p>
       </div>
     )
   }
